@@ -234,6 +234,9 @@ def prepare_model_dataset(args):
 
     # download model
     model_path = f'model_zoo/vrt/{args.task}.pth'
+    if args.task == '001_VRT_videosr_bi_REDS_6frames':
+        model_path = 'model_zoo/vrt/live_vrt.pth'
+
     if os.path.exists(model_path):
         print(f'loading model from ./model_zoo/vrt/{model_path}')
     else:
